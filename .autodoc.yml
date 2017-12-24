@@ -1,0 +1,5 @@
+name: auth0-api-documentation
+dir: controllers
+flavor: jsdoc
+articles:
+  - Readme: README.md

@@ -1,0 +1,19 @@
+{
+  "name": "auth0-api-documentation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DoubleTap-Consulting/auth0-backend-documentation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DoubleTap-Consulting/auth0-backend-documentation/issues"
+  },
+  "homepage": "https://github.com/DoubleTap-Consulting/auth0-backend-documentation#readme"
+}
