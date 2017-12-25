@@ -2,18 +2,6 @@ const userController = {};
 const userModel = require('../models/user');
 
 /**
- * @api {post} /user Get user info from external database
- * @apiName GetUser
- * @apiGroup User
- *
- * @apiHeaderExample {json} Header-Example:
- *   {
- *     "access_token": "someaccesstokenhere"
- *   }
- * @apiSuccess {Number} API response code
- * @apiSuccess {Object} user object
- */
-/**
  * Un-favorite article
  * @name get/user
  * @function
