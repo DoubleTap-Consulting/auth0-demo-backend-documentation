@@ -1,16 +1,14 @@
 const articleController = {};
 const articleModel = require('../models/article')
 
+
 /**
- * @api {get} /article:articleId Get one specific article
- * @apiName GetArticle
- * @apiGroup Article
- *
- * @apiParam {Number} articleId Article unique ID.
- * Note: This is a body/data parameter
- *
- * @apiSuccess {Number} API response code
- * @apiSuccess {Object} article object
+ * Get one specific article
+ * @name get/article:articleId
+ * @function
+ * @memberof module:article
+ * @inner
+ * @param {number} articleId
  */
 articleController.GET_ARTICLE = (req, res) => {
   const articleId = req.params.articleId
@@ -21,16 +19,14 @@ articleController.GET_ARTICLE = (req, res) => {
 }
 
 /**
- * @api {get} /article Get articles
- * @apiName GetArticle
- * @apiGroup Article
- *
- * @apiParam {String} category Category to filter
- * Accepted filters: 'recommended', 'Sports', 'Football', 'TV & Showbiz', 'News', 'Living', 'Money', 'Motors', 'Travel', 'Tech', 'Entertainment', 'Finance'
- * Note: This is a query parameter
- * 
- * @apiSuccess {Number} API response code
- * @apiSuccess {Object} article object
+ * Get articles
+ * @name get/articles
+ * @function
+ * @memberof module:article
+ * @returns {Array} Returns an array of article objects
+ * @param {string} category
+ * // Accepted filters: 'recommended', 'Sports', 'Football', 'TV & Showbiz', 'News', 'Living', 'Money', 'Motors', 'Travel', 'Tech', 'Entertainment', 'Finance'
+ * // Note: This is a query parameter
  */
 articleController.GET_ARTICLES = (req, res) => {
   const category = req.query.category

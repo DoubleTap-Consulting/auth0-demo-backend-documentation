@@ -2,14 +2,12 @@ const favoriteController = {};
 const favoriteModel = require('../models/favorite');
 
 /**
- * @api {post} /favorite Favorite an article
- * @apiName FavoriteArticle
- * @apiGroup Article
- *
- * @apiParam {Number} articleId Article unique ID.
- *
- * @apiSuccess {Number} API response code
- * @apiSuccess {Object} article object
+ * Post favorite article
+ * @name post/favorite
+ * @function
+ * @memberof module:article
+ * @returns {Object} Returns article that was favorited
+ * @param {number} articleId
  */
 favoriteController.FAVORITE_ARTICLE = (req, res) => {
   favoriteModel.FAVORITE_ARTICLE(req.body.articleId, req.user.email)
@@ -19,14 +17,12 @@ favoriteController.FAVORITE_ARTICLE = (req, res) => {
 }
 
 /**
- * @api {delete} /favorite Unfavorite an article
- * @apiName UnfavoriteArticle
- * @apiGroup Article
- *
- * @apiParam {Number} articleId Article unique ID.
- *
- * @apiSuccess {Number} API response code
- * @apiSuccess {Object} article object
+ * Un-favorite article
+ * @name delete/favorite
+ * @function
+ * @memberof module:article
+ * @returns {Object} Returns article that was unfavorited
+ * @param {number} articleId
  */
 favoriteController.DELETE_FAVORITE = (req, res) => {
   favoriteModel.DELETE_FAVORITE(req.body.articleId, req.user.email)

@@ -13,6 +13,15 @@ const userModel = require('../models/user');
  * @apiSuccess {Number} API response code
  * @apiSuccess {Object} user object
  */
+/**
+ * Un-favorite article
+ * @name get/user
+ * @function
+ * @memberof module:user
+ * @returns {Object} Returns user object
+ * @param {string} access_token
+ * // access_token should be attached to header
+ */
 userController.GET_USER = (req, res) => {
   userModel.GET_USER(req.user.email)
     .then(user => {
