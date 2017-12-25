@@ -1,0 +1,223 @@
+{
+    "project": {},
+    "files": {
+        "controllers/article.js": {
+            "name": "controllers/article.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers/favorite.js": {
+            "name": "controllers/favorite.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers/user.js": {
+            "name": "controllers/user.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {},
+    "elements": {},
+    "classitems": [
+        {
+            "file": "controllers/article.js",
+            "line": 4,
+            "api": "{get} /article:articleId Get one specific article",
+            "apiname": "GetArticle",
+            "apigroup": "Article",
+            "apiparam": "{Number} articleId Article unique ID.\nNote: This is a body/data parameter",
+            "apisuccess": "{Object} article object",
+            "class": ""
+        },
+        {
+            "file": "controllers/article.js",
+            "line": 23,
+            "api": "{get} /article Get articles",
+            "apiname": "GetArticle",
+            "apigroup": "Article",
+            "apiparam": "{String} category Category to filter\nAccepted filters: 'recommended', 'Sports', 'Football', 'TV & Showbiz', 'News', 'Living', 'Money', 'Motors', 'Travel', 'Tech', 'Entertainment', 'Finance'\nNote: This is a query parameter",
+            "apisuccess": "{Object} article object",
+            "class": ""
+        },
+        {
+            "file": "controllers/favorite.js",
+            "line": 4,
+            "api": "{post} /favorite Favorite an article",
+            "apiname": "FavoriteArticle",
+            "apigroup": "Article",
+            "apiparam": "{Number} articleId Article unique ID.",
+            "apisuccess": "{Object} article object",
+            "class": ""
+        },
+        {
+            "file": "controllers/favorite.js",
+            "line": 21,
+            "api": "{delete} /favorite Unfavorite an article",
+            "apiname": "UnfavoriteArticle",
+            "apigroup": "Article",
+            "apiparam": "{Number} articleId Article unique ID.",
+            "apisuccess": "{Object} article object",
+            "class": ""
+        },
+        {
+            "file": "controllers/user.js",
+            "line": 4,
+            "api": "{post} /user Get user info from external database",
+            "apiname": "GetUser",
+            "apigroup": "User",
+            "apiheaderexample": "{json} Header-Example:\n  {\n    \"access_token\": \"someaccesstokenhere\"\n  }",
+            "apisuccess": "{Object} user object",
+            "class": ""
+        }
+    ],
+    "warnings": [
+        {
+            "message": "unknown tag: api",
+            "line": " controllers/article.js:4"
+        },
+        {
+            "message": "unknown tag: apiname",
+            "line": " controllers/article.js:4"
+        },
+        {
+            "message": "unknown tag: apigroup",
+            "line": " controllers/article.js:4"
+        },
+        {
+            "message": "unknown tag: apiparam",
+            "line": " controllers/article.js:4"
+        },
+        {
+            "message": "unknown tag: apisuccess",
+            "line": " controllers/article.js:4"
+        },
+        {
+            "message": "unknown tag: apisuccess",
+            "line": " controllers/article.js:4"
+        },
+        {
+            "message": "unknown tag: api",
+            "line": " controllers/article.js:23"
+        },
+        {
+            "message": "unknown tag: apiname",
+            "line": " controllers/article.js:23"
+        },
+        {
+            "message": "unknown tag: apigroup",
+            "line": " controllers/article.js:23"
+        },
+        {
+            "message": "unknown tag: apiparam",
+            "line": " controllers/article.js:23"
+        },
+        {
+            "message": "unknown tag: apisuccess",
+            "line": " controllers/article.js:23"
+        },
+        {
+            "message": "unknown tag: apisuccess",
+            "line": " controllers/article.js:23"
+        },
+        {
+            "message": "unknown tag: api",
+            "line": " controllers/favorite.js:4"
+        },
+        {
+            "message": "unknown tag: apiname",
+            "line": " controllers/favorite.js:4"
+        },
+        {
+            "message": "unknown tag: apigroup",
+            "line": " controllers/favorite.js:4"
+        },
+        {
+            "message": "unknown tag: apiparam",
+            "line": " controllers/favorite.js:4"
+        },
+        {
+            "message": "unknown tag: apisuccess",
+            "line": " controllers/favorite.js:4"
+        },
+        {
+            "message": "unknown tag: apisuccess",
+            "line": " controllers/favorite.js:4"
+        },
+        {
+            "message": "unknown tag: api",
+            "line": " controllers/favorite.js:21"
+        },
+        {
+            "message": "unknown tag: apiname",
+            "line": " controllers/favorite.js:21"
+        },
+        {
+            "message": "unknown tag: apigroup",
+            "line": " controllers/favorite.js:21"
+        },
+        {
+            "message": "unknown tag: apiparam",
+            "line": " controllers/favorite.js:21"
+        },
+        {
+            "message": "unknown tag: apisuccess",
+            "line": " controllers/favorite.js:21"
+        },
+        {
+            "message": "unknown tag: apisuccess",
+            "line": " controllers/favorite.js:21"
+        },
+        {
+            "message": "unknown tag: api",
+            "line": " controllers/user.js:4"
+        },
+        {
+            "message": "unknown tag: apiname",
+            "line": " controllers/user.js:4"
+        },
+        {
+            "message": "unknown tag: apigroup",
+            "line": " controllers/user.js:4"
+        },
+        {
+            "message": "unknown tag: apiheaderexample",
+            "line": " controllers/user.js:4"
+        },
+        {
+            "message": "unknown tag: apisuccess",
+            "line": " controllers/user.js:4"
+        },
+        {
+            "message": "unknown tag: apisuccess",
+            "line": " controllers/user.js:4"
+        },
+        {
+            "message": "Missing item type",
+            "line": " controllers/article.js:4"
+        },
+        {
+            "message": "Missing item type",
+            "line": " controllers/article.js:23"
+        },
+        {
+            "message": "Missing item type",
+            "line": " controllers/favorite.js:4"
+        },
+        {
+            "message": "Missing item type",
+            "line": " controllers/favorite.js:21"
+        },
+        {
+            "message": "Missing item type",
+            "line": " controllers/user.js:4"
+        }
+    ]
+}

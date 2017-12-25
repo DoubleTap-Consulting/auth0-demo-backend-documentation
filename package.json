@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/DoubleTap-Consulting/auth0-backend-documentation/issues"
   },
-  "homepage": "https://github.com/DoubleTap-Consulting/auth0-backend-documentation#readme"
+  "homepage": "https://github.com/DoubleTap-Consulting/auth0-backend-documentation#readme",
+  "dependencies": {
+    "esdoc": "^1.0.4",
+    "esdoc-standard-plugin": "^1.0.0"
+  }
 }
