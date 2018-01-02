@@ -1,6 +1,4 @@
-const articleController = {};
-const articleModel = require('../models/article')
-
+import articleModel from '../models/article'
 
 /**
  * Get one specific article
@@ -10,9 +8,10 @@ const articleModel = require('../models/article')
  * @inner
  * @param {number} articleId
  */
-articleController.GET_ARTICLE = (req, res) => {
-  const articleId = req.params.articleId
-  articleModel.GET_ARTICLE(articleId)
+function getById(req, res) {
+  const { articleId } = req.params
+
+  articleModel.getByID(articleId)
     .then((response) => {
       res.status(200).send(response)
     })
@@ -25,35 +24,45 @@ articleController.GET_ARTICLE = (req, res) => {
  * @memberof module:article
  * @returns {Array} Returns an array of article objects
  * @param {string} category
- * // Accepted filters: 'recommended', 'Sports', 'Football', 'TV & Showbiz', 'News', 'Living', 'Money', 'Motors', 'Travel', 'Tech', 'Entertainment', 'Finance'
- * // Note: This is a query parameter
+ * Accepted filters:
+ *   'recommended', 'Sports', 'Football', 'TV & Showbiz', 'News', 'Living',
+ *   'Money', 'Motors', 'Travel', 'Tech', 'Entertainment', 'Finance'
+ * Note: This is a query parameter
  */
-articleController.GET_ARTICLES = (req, res) => {
-  const category = req.query.category
+function index(req, res) {
+  const { category } = req.query
+  const { email } = req.user
+
   if (category === 'recommended') {
-    articleModel.GET_ARTICLES('Sports')
+    articleModel.getRecommendedArticles(email)
       .then((response) => {
         res.status(200).send(response)
       })
   } else {
-    articleModel.GET_ARTICLES(category)
+    articleModel.getByCategory(category)
       .then((response) => {
         res.status(200).send(response)
       })
   }
 }
 
-articleController.CREATE_ARTICLE = (req, res) => {
-  const articleToCreate = req.body.article
-  articleModel.CREATE_ARTICLE(articleToCreate)
+function create(req, res) {
+  const { article } = req.body
+  articleModel.create(article)
     .then((response) => {
       res.status(200).send(response)
     })
 }
 
-articleController.POPULATE_ARTICLES = (req, res) => {
-  articleModel.POPULATE_ARTICLES()
+function populate(req, res) {
+  articleModel.populate()
   res.status(200).send('Success')
 }
 
-module.exports = articleController
+
+export default {
+  getById,
+  index,
+  create,
+  populate
+}

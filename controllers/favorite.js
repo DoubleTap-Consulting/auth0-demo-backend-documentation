@@ -1,5 +1,4 @@
-const favoriteController = {};
-const favoriteModel = require('../models/favorite');
+import favoriteModel from '../models/favorite'
 
 /**
  * Post favorite article
@@ -9,9 +8,9 @@ const favoriteModel = require('../models/favorite');
  * @returns {Object} Returns article that was favorited
  * @param {number} articleId
  */
-favoriteController.FAVORITE_ARTICLE = (req, res) => {
-  favoriteModel.FAVORITE_ARTICLE(req.body.articleId, req.user.email)
-    .then(status => {
+function setFavorite(req, res) {
+  favoriteModel.setFavorite(req.body.articleId, req.user.email)
+    .then((status) => {
       res.status(200).send(status)
     })
 }
@@ -24,12 +23,14 @@ favoriteController.FAVORITE_ARTICLE = (req, res) => {
  * @returns {Object} Returns article that was unfavorited
  * @param {number} articleId
  */
-favoriteController.DELETE_FAVORITE = (req, res) => {
-  favoriteModel.DELETE_FAVORITE(req.body.articleId, req.user.email)
-    .then(status => {
+function removeFavorite(req, res) {
+  favoriteModel.removeFavorite(req.body.articleId, req.user.email)
+    .then((status) => {
       res.status(200).send(status)
     })
 }
 
-
-module.exports = favoriteController
+export default {
+  setFavorite,
+  removeFavorite
+}

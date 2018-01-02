@@ -1,5 +1,4 @@
-const userController = {};
-const userModel = require('../models/user');
+import userModel from '../models/user'
 
 /**
  * Un-favorite article
@@ -8,21 +7,93 @@ const userModel = require('../models/user');
  * @memberof module:user
  * @returns {Object} Returns user object
  * @param {string} access_token
- * // access_token should be attached to header
+ * Note: access_token should be attached to header
  */
-userController.GET_USER = (req, res) => {
-  userModel.GET_USER(req.user.email)
-    .then(user => {
+function getByEmail(req, res) {
+  userModel.getByEmail(req.user.email)
+    .then((user) => {
       res.status(200).send(user)
     })
 }
 
-userController.CREATE_USER = (req, res) => {
-  userModel.CREATE_USER(req.body.email)
-    .then(user => {
+function create(req, res) {
+  userModel.create(req.user.email)
+    .then((user) => {
       res.status(200).send(user)
     })
 }
 
+/**
+ * Add preferred category
+ * @name post/user/views
+ * @function
+ * @memberof module:user
+ * @returns {Object} Returns user object
+ * @param {string} access_token
+ * Note: access_token should be attached to header
+ */
+function addToViewCount(req, res) {
+  userModel.addToViewCount(req.user.email)
+    .then((user) => {
+      res.status(200).send(user)
+    })
+}
 
-module.exports = userController
+/**
+ * Add preferred category
+ * @name delete/user/views
+ * @function
+ * @memberof module:user
+ * @returns {Object} Returns user object
+ * @param {string} access_token
+ * Note: access_token should be attached to header
+ */
+function removeViewCount(req, res) {
+  userModel.removeViewCount(req.user.email)
+    .then((user) => {
+      res.status(200).send(user)
+    })
+}
+
+/**
+ * Add preferred category
+ * @name post/user/category
+ * @function
+ * @memberof module:user
+ * @returns {Object} Returns user object
+ * @param {string} access_token
+ * @param {string} category
+ * Note: access_token should be attached to header
+ */
+function addCategory(req, res) {
+  userModel.addCategory(req.user.email, req.body.category)
+    .then((user) => {
+      res.status(200).send(user)
+    })
+}
+
+/**
+ * Remove preferred category
+ * @name delete/user/category
+ * @function
+ * @memberof module:user
+ * @returns {Object} Returns user object
+ * @param {string} access_token
+ * @param {string} category
+ * Note: access_token should be attached to header
+ */
+function removeCategory(req, res) {
+  userModel.removeCategory(req.user.email, req.body.category)
+    .then((user) => {
+      res.status(200).send(user)
+    })
+}
+
+export default {
+  getByEmail,
+  create,
+  addCategory,
+  removeCategory,
+  addToViewCount,
+  removeViewCount
+}
